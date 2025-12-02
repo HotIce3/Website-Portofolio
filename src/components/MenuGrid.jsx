@@ -28,7 +28,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
   const categories = ["All", "Hot", "Ice", "Milk-based", "Non-coffee"];
 
   return (
-    <section id="menu" className="py-20 bg-coffee-cream dark:bg-coffee-black">
+    <section id="menu" className="section-padding-y bg-coffee-cream dark:bg-coffee-black">
       <div className="container-xl">
         <div className="text-center mb-12">
           <h2 className="font-display text-4xl font-bold text-coffee-dark dark:text-coffee-gold mb-4">

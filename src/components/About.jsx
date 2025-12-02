@@ -34,7 +34,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className="about-section py-20 bg-coffee-cream dark:bg-coffee-dark">
+    <section className="about-section section-padding-y bg-coffee-cream dark:bg-coffee-dark">
       <div className="container-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image */}

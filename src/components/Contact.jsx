@@ -9,7 +9,7 @@ export default function Contact() {
   )}`;
 
   return (
-    <section className="py-20 bg-coffee-cream dark:bg-coffee-black">
+    <section className="section-padding-y bg-coffee-cream dark:bg-coffee-black">
       <div className="container-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Info */}

@@ -33,7 +33,7 @@ export default function Gallery() {
   const [openIndex, setOpenIndex] = React.useState(-1);
 
   return (
-    <section className="py-20 bg-coffee-dark">
+    <section className="section-padding-y bg-coffee-dark">
       <div className="container-xl">
         <div className="text-center mb-12">
           <h2 className="font-display text-4xl font-bold text-coffee-cream mb-4">
