@@ -5,7 +5,7 @@ import { useCart } from "../hooks/useCart";
 import ProductModal from "./ProductModal";
 
 export default function MenuGrid({ limit, showViewMore = false }) {
-  const { menu, loading } = useMenu();
+  const { menu } = useMenu();
   const { addItem } = useCart();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [category, setCategory] = useState("All");
@@ -16,9 +16,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
     if (category !== "All") {
       filteredMenu = filteredMenu.filter((item) => item.category === category);
     }
-    if (limit) {
-      filteredMenu = filteredMenu.slice(0, limit);
-    }
+    if (limit) filteredMenu = filteredMenu.slice(0, limit);
     setDisplayMenu(filteredMenu);
   }, [menu, category, limit]);
 
@@ -30,25 +28,26 @@ export default function MenuGrid({ limit, showViewMore = false }) {
       className="section-padding-y bg-coffee-cream dark:bg-coffee-black"
     >
       <div className="container-xl">
-        <div className="text-center mb-16">
-          {" "}
-          {/* Margin bottom diperbesar */}
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-coffee-gold font-bold tracking-widest text-sm uppercase mb-2 block">
+            Discover Our Taste
+          </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-coffee-dark dark:text-coffee-gold mb-6">
             Menu Pilihan
           </h2>
-          <p className="text-lg text-coffee-dark dark:text-coffee-cream text-opacity-80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-coffee-dark/80 dark:text-coffee-cream/80 max-w-2xl mx-auto leading-relaxed">
             Nikmati koleksi kopi premium kami yang dipilih dengan cermat dari
             berbagai daerah di Nusantara.
           </p>
         </div>
 
-        {/* Category Filter - Jarak diperbesar */}
-        <div className="flex justify-center gap-4 mb-16 flex-wrap">
+        {/* Filter Buttons - Lebih besar & lega */}
+        <div className="flex justify-center flex-wrap gap-4 mb-16">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setCategory(cat)}
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-medium transition-all duration-300 tracking-wide ${
                 category === cat
                   ? "bg-coffee-gold text-coffee-dark shadow-lg transform scale-105"
                   : "bg-coffee-dark dark:bg-coffee-cream text-coffee-cream dark:text-coffee-dark hover:bg-coffee-gold hover:text-coffee-dark"
@@ -59,40 +58,38 @@ export default function MenuGrid({ limit, showViewMore = false }) {
           ))}
         </div>
 
-        {/* Menu Grid - Gap diperbesar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16">
+        {/* Menu Grid - Gap diperbesar (gap-8 md:gap-10) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16">
           {displayMenu.map((item) => (
             <div
               key={item.id}
-              className="group bg-white dark:bg-coffee-dark rounded-2xl overflow-hidden coffee-shadow card-hover cursor-pointer h-full flex flex-col"
+              className="group bg-white dark:bg-coffee-dark rounded-3xl overflow-hidden coffee-shadow card-hover cursor-pointer h-full flex flex-col"
               onClick={() => setSelectedProduct(item)}
-              data-aos="fade-up"
             >
               <div className="relative h-72 overflow-hidden">
                 <img
                   src={item.image_url}
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="px-4 py-1.5 bg-coffee-gold text-coffee-dark text-xs font-bold rounded-full shadow-md">
+                  <span className="px-4 py-2 bg-coffee-gold text-coffee-dark text-xs font-bold rounded-full shadow-md uppercase tracking-wider">
                     {item.category}
                   </span>
                 </div>
               </div>
 
-              {/* Padding Content diperbesar */}
+              {/* Content Card - Padding diperbesar (p-8) */}
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="font-display text-2xl font-bold text-coffee-dark dark:text-coffee-gold mb-3 group-hover:text-coffee-gold transition-colors">
                   {item.name}
                 </h3>
-                <p className="text-coffee-dark dark:text-coffee-cream text-opacity-70 mb-6 line-clamp-2 leading-relaxed flex-grow">
+                <p className="text-coffee-dark/70 dark:text-coffee-cream/70 mb-8 line-clamp-2 leading-relaxed flex-grow">
                   {item.description}
                 </p>
 
-                <div className="flex justify-between items-center pt-4 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                <div className="flex justify-between items-center pt-6 border-t border-coffee-gold/20 mt-auto">
                   <span className="font-display text-2xl font-bold text-coffee-gold">
                     Rp {item.price.toLocaleString("id-ID")}
                   </span>
@@ -101,8 +98,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
                       e.stopPropagation();
                       addItem(item);
                     }}
-                    className="p-3 bg-coffee-dark dark:bg-coffee-gold text-white dark:text-coffee-dark rounded-xl hover:bg-coffee-gold hover:text-white dark:hover:bg-white transition-all shadow-md"
-                    title="Tambah ke Keranjang"
+                    className="w-12 h-12 flex items-center justify-center bg-coffee-dark dark:bg-coffee-gold text-white dark:text-coffee-dark rounded-full hover:bg-coffee-gold dark:hover:bg-white transition-all shadow-md"
                   >
                     <ShoppingCart size={20} />
                   </button>

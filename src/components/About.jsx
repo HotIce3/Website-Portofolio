@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -14,7 +14,7 @@ export default function About() {
           end: "bottom center",
           scrub: 1,
         },
-        y: -50,
+        y: -30,
         duration: 2,
       });
 
@@ -34,79 +34,73 @@ export default function About() {
   }, []);
 
   return (
-    <section className="about-section section-padding-y bg-coffee-cream dark:bg-coffee-dark">
+    <section className="about-section section-padding-y bg-coffee-cream dark:bg-coffee-dark overflow-hidden">
       <div className="container-xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div className="about-image">
+        {/* PERBAIKAN: gap-12 md:gap-20 -> Menjauhkan teks dari gambar */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+          {/* Image Wrapper */}
+          <div className="about-image relative">
+            <div className="absolute inset-0 bg-coffee-gold/10 transform translate-x-4 translate-y-4 rounded-2xl -z-10"></div>
             <img
-              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop"
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80"
               alt="Coffee Roasting"
-              className="rounded-2xl coffee-shadow"
+              className="rounded-2xl shadow-2xl w-full object-cover h-[400px] md:h-[500px]"
             />
           </div>
 
-          {/* Text */}
+          {/* Text Content */}
           <div className="about-text opacity-0 translate-y-8">
-            <h2 className="font-display text-4xl font-bold text-coffee-dark dark:text-coffee-gold mb-6">
-              Tentang Kopi Nusantara
+            <span className="text-coffee-gold font-bold tracking-widest text-sm uppercase mb-2 block">
+              Our Story
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-coffee-dark dark:text-coffee-gold mb-8 leading-tight">
+              Tentang Kopi <br /> Nusantara
             </h2>
 
-            <p className="text-lg text-coffee-dark dark:text-coffee-cream text-opacity-80 mb-4">
-              Kami adalah kopi shop premium yang menghadirkan pengalaman cita
-              rasa autentik kopi Nusantara. Setiap biji kopi dipilih dengan
-              cermat dari petani lokal terbaik di berbagai daerah di Indonesia.
-            </p>
+            <div className="space-y-6 text-lg text-coffee-dark/80 dark:text-coffee-cream/80">
+              <p>
+                Kami adalah kopi shop premium yang menghadirkan pengalaman cita
+                rasa autentik kopi Nusantara. Setiap biji kopi dipilih dengan
+                cermat dari petani lokal terbaik di berbagai daerah di
+                Indonesia.
+              </p>
+              <p>
+                Dengan proses roasting yang sempurna dan brewing technique yang
+                modern, kami menciptakan setiap cangkir dengan passion dan
+                expertise.
+              </p>
+            </div>
 
-            <p className="text-lg text-coffee-dark dark:text-coffee-cream text-opacity-80 mb-6">
-              Dengan proses roasting yang sempurna dan brewing technique yang
-              modern, kami menciptakan setiap cangkir dengan passion dan
-              expertise. Kopi bukan sekadar minuman, tapi adalah cerita dan
-              budaya.
-            </p>
-
-            <div className="space-y-3">
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-coffee-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-coffee-dark font-bold">✓</span>
+            <div className="mt-8 space-y-4">
+              {/* Feature List dengan spacing lebih lega */}
+              {[
+                {
+                  title: "Premium Quality Beans",
+                  desc: "Biji kopi pilihan dari seluruh Nusantara",
+                },
+                {
+                  title: "Brewing Excellence",
+                  desc: "Teknik modern dengan sentuhan tradisional",
+                },
+                {
+                  title: "Sustainable & Ethical",
+                  desc: "Mendukung petani lokal & lingkungan",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-coffee-gold/20 rounded-full flex items-center justify-center flex-shrink-0 text-coffee-gold mt-1">
+                    ✓
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-coffee-dark dark:text-coffee-gold text-lg mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-coffee-dark/70 dark:text-coffee-cream/70">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-coffee-dark dark:text-coffee-gold mb-1">
-                    Kopi Berkualitas Premium
-                  </h3>
-                  <p className="text-sm text-coffee-dark dark:text-coffee-cream text-opacity-70">
-                    Biji kopi pilihan dari seluruh Nusantara
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-coffee-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-coffee-dark font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-coffee-dark dark:text-coffee-gold mb-1">
-                    Brewing Excellence
-                  </h3>
-                  <p className="text-sm text-coffee-dark dark:text-coffee-cream text-opacity-70">
-                    Teknik brewing modern dengan sentuhan tradisional
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-coffee-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-coffee-dark font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-coffee-dark dark:text-coffee-gold mb-1">
-                    Sustainable & Ethical
-                  </h3>
-                  <p className="text-sm text-coffee-dark dark:text-coffee-cream text-opacity-70">
-                    Mendukung petani lokal dan lingkungan berkelanjutan
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
