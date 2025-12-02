@@ -14,7 +14,6 @@
       "required": true
     }
   },
-  "buildOutputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
