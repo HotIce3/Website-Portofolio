@@ -36,7 +36,7 @@ export default function About() {
   return (
     <section className="about-section section-padding-y bg-coffee-cream dark:bg-coffee-dark overflow-hidden">
       <div className="container-xl">
-        {/* PERBAIKAN: gap-12 md:gap-20 -> Menjauhkan teks dari gambar */}
+        {/* Gap antar kolom diperbesar (gap-12 md:gap-20) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Image Wrapper */}
           <div className="about-image relative">
@@ -67,40 +67,53 @@ export default function About() {
               <p>
                 Dengan proses roasting yang sempurna dan brewing technique yang
                 modern, kami menciptakan setiap cangkir dengan passion dan
-                expertise.
+                expertise. Kopi bukan sekadar minuman, tapi adalah cerita dan
+                budaya.
               </p>
             </div>
 
-            <div className="mt-8 space-y-4">
-              {/* Feature List dengan spacing lebih lega */}
-              {[
-                {
-                  title: "Premium Quality Beans",
-                  desc: "Biji kopi pilihan dari seluruh Nusantara",
-                },
-                {
-                  title: "Brewing Excellence",
-                  desc: "Teknik modern dengan sentuhan tradisional",
-                },
-                {
-                  title: "Sustainable & Ethical",
-                  desc: "Mendukung petani lokal & lingkungan",
-                },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-coffee-gold/20 rounded-full flex items-center justify-center flex-shrink-0 text-coffee-gold mt-1">
-                    ✓
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-coffee-dark dark:text-coffee-gold text-lg mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-coffee-dark/70 dark:text-coffee-cream/70">
-                      {item.desc}
-                    </p>
-                  </div>
+            <div className="space-y-6 mt-8">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-coffee-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-coffee-gold font-bold">✓</span>
                 </div>
-              ))}
+                <div>
+                  <h3 className="font-bold text-coffee-dark dark:text-coffee-gold text-lg mb-1">
+                    Kopi Berkualitas Premium
+                  </h3>
+                  <p className="text-sm text-coffee-dark dark:text-coffee-cream text-opacity-70">
+                    Biji kopi pilihan dari seluruh Nusantara
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-coffee-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-coffee-gold font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-coffee-dark dark:text-coffee-gold text-lg mb-1">
+                    Brewing Excellence
+                  </h3>
+                  <p className="text-sm text-coffee-dark dark:text-coffee-cream text-opacity-70">
+                    Teknik brewing modern dengan sentuhan tradisional
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-coffee-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-coffee-gold font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-coffee-dark dark:text-coffee-gold text-lg mb-1">
+                    Sustainable & Ethical
+                  </h3>
+                  <p className="text-sm text-coffee-dark dark:text-coffee-cream text-opacity-70">
+                    Mendukung petani lokal dan lingkungan berkelanjutan
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

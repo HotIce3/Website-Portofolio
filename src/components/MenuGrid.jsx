@@ -5,7 +5,7 @@ import { useCart } from "../hooks/useCart";
 import ProductModal from "./ProductModal";
 
 export default function MenuGrid({ limit, showViewMore = false }) {
-  const { menu } = useMenu();
+  const { menu, loading } = useMenu();
   const { addItem } = useCart();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [category, setCategory] = useState("All");
@@ -13,10 +13,15 @@ export default function MenuGrid({ limit, showViewMore = false }) {
 
   useEffect(() => {
     let filteredMenu = menu.length > 0 ? menu : getDemoMenu();
+
     if (category !== "All") {
       filteredMenu = filteredMenu.filter((item) => item.category === category);
     }
-    if (limit) filteredMenu = filteredMenu.slice(0, limit);
+
+    if (limit) {
+      filteredMenu = filteredMenu.slice(0, limit);
+    }
+
     setDisplayMenu(filteredMenu);
   }, [menu, category, limit]);
 
@@ -41,7 +46,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
           </p>
         </div>
 
-        {/* Filter Buttons - Lebih besar & lega */}
+        {/* Category Filter - Lebih besar & lega */}
         <div className="flex justify-center flex-wrap gap-4 mb-16">
           {categories.map((cat) => (
             <button
@@ -58,14 +63,16 @@ export default function MenuGrid({ limit, showViewMore = false }) {
           ))}
         </div>
 
-        {/* Menu Grid - Gap diperbesar (gap-8 md:gap-10) */}
+        {/* Menu Grid - Gap diperbesar agar tidak rapat */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16">
           {displayMenu.map((item) => (
             <div
               key={item.id}
               className="group bg-white dark:bg-coffee-dark rounded-3xl overflow-hidden coffee-shadow card-hover cursor-pointer h-full flex flex-col"
               onClick={() => setSelectedProduct(item)}
+              data-aos="fade-up"
             >
+              {/* Image */}
               <div className="relative h-72 overflow-hidden">
                 <img
                   src={item.image_url}
@@ -73,6 +80,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                 <div className="absolute top-4 left-4">
                   <span className="px-4 py-2 bg-coffee-gold text-coffee-dark text-xs font-bold rounded-full shadow-md uppercase tracking-wider">
                     {item.category}
@@ -99,6 +107,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
                       addItem(item);
                     }}
                     className="w-12 h-12 flex items-center justify-center bg-coffee-dark dark:bg-coffee-gold text-white dark:text-coffee-dark rounded-full hover:bg-coffee-gold dark:hover:bg-white transition-all shadow-md"
+                    title="Tambah ke Keranjang"
                   >
                     <ShoppingCart size={20} />
                   </button>
@@ -108,6 +117,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
           ))}
         </div>
 
+        {/* View More Button */}
         {showViewMore && (
           <div className="text-center">
             <a href="/menu" className="btn-primary">
@@ -116,6 +126,7 @@ export default function MenuGrid({ limit, showViewMore = false }) {
           </div>
         )}
 
+        {/* Product Modal */}
         {selectedProduct && (
           <ProductModal
             product={selectedProduct}
