@@ -157,15 +157,15 @@ body.dark::-webkit-scrollbar-thumb {
 }
 
 .btn-primary {
-  @apply px-6 py-3 bg-coffee-gold text-coffee-black font-semibold rounded-lg hover:bg-coffee-dark hover:text-coffee-cream transition-all duration-300 transform hover:scale-105;
+  @apply px-8 py-4 bg-coffee-gold text-coffee-black font-bold rounded-lg hover:bg-coffee-gold/90 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer shadow-md hover:shadow-lg;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 border-2 border-coffee-gold text-coffee-gold hover:bg-coffee-gold hover:text-coffee-black transition-all duration-300 rounded-lg;
+  @apply px-8 py-4 border-2 border-coffee-gold text-coffee-gold hover:bg-coffee-gold hover:text-coffee-black font-semibold transition-all duration-300 rounded-lg transform hover:scale-105 active:scale-95 cursor-pointer shadow-md hover:shadow-lg;
 }
 
 .btn-dark {
-  @apply px-6 py-3 bg-coffee-dark text-coffee-cream rounded-lg hover:bg-coffee-black transition-all duration-300;
+  @apply px-6 py-3 bg-coffee-dark text-coffee-cream rounded-lg hover:bg-coffee-black transition-all duration-300 transform hover:scale-105;
 }
 
 /* Modal Overlay */

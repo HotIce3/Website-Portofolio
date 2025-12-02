@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 export default function Hero() {
@@ -31,6 +32,17 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 1, delay: 0.4, ease: "power3.out" }
       );
     }
+
+    // Button hover animation
+    const buttons = document.querySelectorAll(".hero-cta a");
+    buttons.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        gsap.to(button, { scale: 1.05, duration: 0.3 });
+      });
+      button.addEventListener("mouseleave", () => {
+        gsap.to(button, { scale: 1, duration: 0.3 });
+      });
+    });
   }, []);
 
   return (
@@ -63,12 +75,18 @@ export default function Hero() {
         </p>
 
         <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#menu" className="btn-primary inline-block">
+          <Link 
+            to="/menu" 
+            className="btn-primary inline-block shadow-lg hover:shadow-xl"
+          >
             Lihat Menu Kami
-          </a>
-          <a href="/menu" className="btn-secondary inline-block">
+          </Link>
+          <Link 
+            to="/contact" 
+            className="btn-secondary inline-block shadow-lg hover:shadow-xl"
+          >
             Pesan Sekarang
-          </a>
+          </Link>
         </div>
       </div>
 
