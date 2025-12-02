@@ -46,43 +46,46 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-coffee-dark via-coffee-dark to-coffee-black flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-coffee-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-coffee-cream rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      </div>
-
-      {/* Parallax Background Image */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Coffee Theme */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1559056199-641a0ac8b3f2?w=1200&h=800&fit=crop)",
+            "url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1400&q=60)",
           backgroundAttachment: "fixed",
         }}
       ></div>
 
+      {/* Dark Overlay for Better Readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-coffee-dark/80"></div>
+
+      {/* Animated Gradient Overlay */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-coffee-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-coffee-cream rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      </div>
+
       {/* Content */}
       <div className="relative z-10 container-xl text-center py-20">
-        <h1 className="hero-heading font-display text-5xl md:text-7xl font-bold text-coffee-cream mb-6">
+        <h1 className="hero-heading font-display text-5xl md:text-7xl font-bold text-coffee-cream mb-6 drop-shadow-lg">
           Kopi <span className="text-coffee-gold">Nusantara</span> Brew
         </h1>
 
-        <p className="hero-subheading text-xl md:text-2xl text-coffee-cream text-opacity-80 mb-12 max-w-3xl mx-auto">
+        <p className="hero-subheading text-xl md:text-2xl text-coffee-cream text-opacity-90 mb-12 max-w-3xl mx-auto drop-shadow-md">
           Pengalaman kopi premium dengan cita rasa autentik Nusantara. Setiap
           cangkir adalah perjalanan.
         </p>
 
         <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
-          <Link 
-            to="/menu" 
+          <Link
+            to="/menu"
             className="btn-primary inline-block shadow-lg hover:shadow-xl"
           >
             Lihat Menu Kami
           </Link>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             className="btn-secondary inline-block shadow-lg hover:shadow-xl"
           >
             Pesan Sekarang
@@ -92,7 +95,7 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown size={32} className="text-coffee-gold" />
+        <ChevronDown size={32} className="text-coffee-gold drop-shadow-md" />
       </div>
     </section>
   );

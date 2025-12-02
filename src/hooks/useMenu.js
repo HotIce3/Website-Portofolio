@@ -55,7 +55,7 @@ export const getDemoMenu = () => [
       "Espresso murni dari biji kopi pilihan Nusantara dengan crema yang kaya",
     price: 25000,
     image_url:
-      "https://images.unsplash.com/photo-1514432324607-2e467f4af445?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -66,7 +66,7 @@ export const getDemoMenu = () => [
       "Kombinasi sempurna espresso, steamed milk, dan foam dengan sentuhan krema",
     price: 35000,
     image_url:
-      "https://images.unsplash.com/photo-1578968051516-7e58c08c58ec?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -77,7 +77,7 @@ export const getDemoMenu = () => [
       "Latte dingin yang menyegarkan dengan lapisan espresso dan susu premium",
     price: 32000,
     image_url:
-      "https://images.unsplash.com/photo-1517558271840-fccb02743145?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -88,7 +88,7 @@ export const getDemoMenu = () => [
       "Espresso double shot dengan hot water untuk rasa yang bold dan smooth",
     price: 28000,
     image_url:
-      "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -98,7 +98,7 @@ export const getDemoMenu = () => [
     description: "Espresso dengan microfoam susu yang halus dan creamy",
     price: 36000,
     image_url:
-      "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -109,7 +109,7 @@ export const getDemoMenu = () => [
       "Kopi pour over dengan metode V60 menggunakan air panas yang sempurna",
     price: 38000,
     image_url:
-      "https://images.unsplash.com/photo-1510591509098-f4fdc6d95cb4?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -119,7 +119,7 @@ export const getDemoMenu = () => [
     description: "Americano dingin yang segar dan energizing untuk hari Anda",
     price: 30000,
     image_url:
-      "https://images.unsplash.com/photo-1517668808822-9ebb02ae2a0e?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
   {
@@ -130,7 +130,7 @@ export const getDemoMenu = () => [
       "Espresso dengan touch of steamed milk cream untuk tekstur sempurna",
     price: 33000,
     image_url:
-      "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
     created_at: new Date().toISOString(),
   },
 ];

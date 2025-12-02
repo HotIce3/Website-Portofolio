@@ -40,7 +40,7 @@ export default function About() {
           {/* Image */}
           <div className="about-image">
             <img
-              src="https://images.unsplash.com/photo-1559056199-641a0ac8b3f2?w=500&h=500&fit=crop"
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop"
               alt="Coffee Roasting"
               className="rounded-2xl coffee-shadow"
             />

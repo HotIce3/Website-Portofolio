@@ -4,27 +4,27 @@ import "yet-another-react-lightbox/styles.css";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1559056199-641a0ac8b3f2?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
     alt: "Coffee Roasting",
   },
   {
-    src: "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
     alt: "Latte Art",
   },
   {
-    src: "https://images.unsplash.com/photo-1559056199-641a0ac8b3f2?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
     alt: "Café Interior",
   },
   {
-    src: "https://images.unsplash.com/photo-1464075314278-fcc92037dac9?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
     alt: "Coffee Shop",
   },
   {
-    src: "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
     alt: "Coffee Beans",
   },
   {
-    src: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=600&fit=crop",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
     alt: "Pour Over",
   },
 ];
