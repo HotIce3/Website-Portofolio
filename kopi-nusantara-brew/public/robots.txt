@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin-login
+Disallow: /admin
+
+Sitemap: https://kopi-nusantara-brew.vercel.app/sitemap.xml

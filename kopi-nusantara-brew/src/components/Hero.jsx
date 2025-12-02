@@ -1,0 +1,81 @@
+import React, { useEffect } from "react";
+import { ChevronDown } from "lucide-react";
+import gsap from "gsap";
+
+export default function Hero() {
+  useEffect(() => {
+    // Typing animation
+    const heading = document.querySelector(".hero-heading");
+    if (heading) {
+      gsap.fromTo(
+        heading,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      );
+    }
+
+    const subheading = document.querySelector(".hero-subheading");
+    if (subheading) {
+      gsap.fromTo(
+        subheading,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: "power3.out" }
+      );
+    }
+
+    const cta = document.querySelector(".hero-cta");
+    if (cta) {
+      gsap.fromTo(
+        cta,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.4, ease: "power3.out" }
+      );
+    }
+  }, []);
+
+  return (
+    <section className="relative min-h-screen bg-gradient-to-br from-coffee-dark via-coffee-dark to-coffee-black flex items-center justify-center overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-coffee-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-coffee-cream rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      </div>
+
+      {/* Parallax Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1559056199-641a0ac8b3f2?w=1200&h=800&fit=crop)",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      {/* Content */}
+      <div className="relative z-10 container-xl text-center py-20">
+        <h1 className="hero-heading font-display text-5xl md:text-7xl font-bold text-coffee-cream mb-6">
+          Kopi <span className="text-coffee-gold">Nusantara</span> Brew
+        </h1>
+
+        <p className="hero-subheading text-xl md:text-2xl text-coffee-cream text-opacity-80 mb-12 max-w-3xl mx-auto">
+          Pengalaman kopi premium dengan cita rasa autentik Nusantara. Setiap
+          cangkir adalah perjalanan.
+        </p>
+
+        <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#menu" className="btn-primary inline-block">
+            Lihat Menu Kami
+          </a>
+          <a href="/menu" className="btn-secondary inline-block">
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ChevronDown size={32} className="text-coffee-gold" />
+      </div>
+    </section>
+  );
+}
