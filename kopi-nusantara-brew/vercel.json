@@ -4,16 +4,6 @@
   "installCommand": "npm ci",
   "framework": "vite",
   "outputDirectory": "dist",
-  "env": {
-    "VITE_SUPABASE_URL": {
-      "description": "Supabase Project URL",
-      "required": true
-    },
-    "VITE_SUPABASE_ANON_KEY": {
-      "description": "Supabase Anon Key",
-      "required": true
-    }
-  },
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
